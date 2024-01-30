@@ -3,6 +3,10 @@ import requests
 
 app = Flask(__name__)
 
+@app.route('/test', methods=['GET', 'POST'])
+def error():
+    return render_template('test.html')
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
