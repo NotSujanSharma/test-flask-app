@@ -2,14 +2,25 @@
 <html lang="en">
 
 <head>
-    <title>URL Fetcher</title>
+    <title>{{title}}</title>
 </head>
 
 <body>
     <h1>Enter URL</h1>
     <form method="post">
         URL: <input type="text" name="url"><br>
+        
+        <input type="radio" id="get" name="method" value="GET">
+        <label for="get">GET</label><br>
+        <input type="radio" id="post" name="method" value="POST">
+        <label for="post">POST</label><br>
+        <input type="text" name="data" placeholder="Post Data (Optional)"><br>
         <input type="submit" value="Submit">
+
+        <hr>
+        {% if response %}
+        <h1>Response from URL</h1>
+        {%endif%}
     </form>
 </body>
 
