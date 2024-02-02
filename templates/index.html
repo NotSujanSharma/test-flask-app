@@ -19,9 +19,22 @@
         <input type="checkbox" id="postcheckbox" class="form-check-input" name="method" value="POST">
         <label class="form-check-label" for="postcheckbox">POST</label>
     </div>
+    <div class="mb-3" id="forData" style="display: none;">
+        <label for="data" class="form-label" >Data</label>
+        <textarea  id ="data" class="form-control" name="data"></textarea>
+    </div>
     <input type="submit" class="btn btn-primary" value="submit">
 </form>
-
+<script>
+    document.getElementById("getcheckbox").addEventListener("click", function () {
+        document.getElementById("postcheckbox").checked = false;
+        document.getElementById("forData").style.display = "none";
+    });
+    document.getElementById("postcheckbox").addEventListener("click", function () {
+        document.getElementById("getcheckbox").checked = false;
+        document.getElementById("forData").style.display = "block";
+    });
+</script>
 <hr>
 {% if response %}
 
