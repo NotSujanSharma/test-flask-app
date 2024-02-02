@@ -27,7 +27,7 @@ def index():
             except requests.RequestException as e:
                 return render_template('index.html', response=f"Error: {e}", title='Result')
     
-    return render_template('index.html', title="Online HTTP Requester", response=True)
+    return render_template('index.html', title="Online HTTP Requester", response=False)
 
 if __name__ == '__main__':
     app.run(debug=True)

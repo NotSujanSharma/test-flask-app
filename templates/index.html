@@ -1,30 +1,32 @@
-<!doctype html>
-<html lang="en">
+{% extends "header.html" %}
 
-<head>
-    <title>{{title}}</title>
-</head>
+{% block title %}{{title}}{% endblock title %}
 
-<body>
-    <h1>Enter URL</h1>
-    <form method="post">
-        URL: <input type="text" name="url"><br>
-        
-        <input type="radio" id="get" name="method" value="GET">
-        <label for="get">GET</label><br>
-        <input type="radio" id="post" name="method" value="POST">
-        <label for="post">POST</label><br>
-        <input type="text" name="data" placeholder="Post Data (Optional)"><br>
-        <input type="submit" value="Submit">
+{% block content %}
+<h1>Enter URL</h1>
 
-        <hr>
-        {% if response %}
-        
-        {{response}}
-        <hr>
-        {%endif%}
 
-    </form>
-</body>
+<form method="post">
+    <div class="mb-3">
+        <label for="url" class="form-label">URL</label>
+        <input type="text" class="form-control" name="url">
+    </div>
+    <div class="mb-3 form-check">
+        <input type="checkbox" id="getcheckbox" class="form-check-input" name="method" value="GET">
+        <label class="form-check-label" for="getcheckbox">GET</label>
+    </div>
+    <div class="mb-3 form-check">
+        <input type="checkbox" id="postcheckbox" class="form-check-input" name="method" value="POST">
+        <label class="form-check-label" for="postcheckbox">POST</label>
+    </div>
+    <input type="submit" class="btn btn-primary" value="submit">
+</form>
 
-</html>
+<hr>
+{% if response %}
+
+{{response}}
+<hr>
+{%endif%}
+
+{% endblock content %}
