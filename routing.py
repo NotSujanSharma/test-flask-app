@@ -1,5 +1,4 @@
 from flask import Blueprint, request, render_template
-import requests
 from utils import getData, postData
 
 views = Blueprint('views', __name__)
@@ -22,4 +21,4 @@ def index():
             return render_template('index.html', response=response, title='Result')
     
     return render_template('index.html', title="Online HTTP Requester", response=False)
-
+ 
