@@ -1,8 +1,14 @@
 {%extends "header.html"%}
 {%block title%}Test{%endblock title%}
 {%block content%}
-<h1>Hello World!</h1>
+<form id="myForm"  data-submit-url="{{ url_for('views.handle_form') }}">
+  <input type="text" name="username" placeholder="Username" required />
+  <input type="email" name="email" placeholder="Email" required />
+  <button type="submit">Submit</button>
+</form>
+<div id="response"></div>
 
-<script type="text/javascript" src="{{url_for('static', filename='index.js')}}">
-</script>
+<script type="text/javascript" src="{{url_for('static', filename='index.js')}}"></script>
+
+
 {%endblock content%}
