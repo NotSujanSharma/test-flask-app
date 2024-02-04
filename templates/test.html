@@ -2,8 +2,8 @@
 {%block title%}Test{%endblock title%}
 {%block content%}
 <form id="myForm"  data-submit-url="{{ url_for('views.handle_form') }}">
-  <input type="text" name="username" placeholder="Username" required />
-  <input type="email" name="email" placeholder="Email" required />
+  <input type="text" name="url" placeholder="url" required />
+  <input type="text" name="method" placeholder="method" required />
   <button type="submit">Submit</button>
 </form>
 <div id="response"></div>

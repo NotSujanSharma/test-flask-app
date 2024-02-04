@@ -6,7 +6,7 @@
 <h1>Enter URL</h1>
 
 
-<form method="post" id="form">
+<form id="myForm" method="post" data-submit-url="{{ url_for('views.handle_form') }}">
     <div class="mb-3">
         <label for="url" class="form-label">URL</label>
         <input type="text" class="form-control" name="url">
@@ -26,20 +26,10 @@
     <input type="submit" class="btn btn-primary" value="submit">
 </form>
 <script>
-    document.getElementById("getchckbox").addEventListener("click", function () {
-        document.getElementById("postcheckbox").checked = false;
-        document.getElementById("forData").style.display = "none";
-    });
-    document.getElementById("postcheckbox").addEventListener("click", function () {
-        document.getElementById("getcheckbox").checked = false;
-        document.getElementById("forData").style.display = "block";
-    });
+    
 </script>
 <hr>
-{% if response %}
-
-{{response}}
-<hr>
-{%endif%}
+<div id="response"></div>
+<script type="text/javascript" src="{{url_for('static', filename='index.js')}}"></script>
 
 {% endblock content %}
